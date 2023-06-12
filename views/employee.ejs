@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .table th, .table td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+
+        .table tr:hover {
+            background-color: #ddd;
+        }
+
+        .table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .table td {
+            padding: 8px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+
+        form label {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        form input {
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        form button {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            cursor: pointer;
+
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        h1 {
+            margin-top: 50px;
+        }
+
+        h2 {
+            margin-top: 50px;
+        }
+
+    
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .flexbox {
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+
+    </style> 
+</head>
+<body>
+    <h1>empl</h1>
+
+    <h2>Employee</h2>
+    <div class="flexbox">
+        
+        <form action="/payroll" method="POST">
+            <label for="month">Month</label>
+            <input type="number" name="month" id="month">
+            <label for="year">Year</label>
+            <input type="number" name="year" id="year">
+            <label for="hours_worked">Hours Worked</label>
+            <input type="number" name="hours_worked" id="hours_worked">
+            <label for="deductions">Deductions</label>
+            <input type="number" name="deductions" id="deductions">
+            <input style="visibility: hidden;" type="number" name="employee_id" id="employee_id" value='<%= employee.id %>'>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    
+        <table class="table">
+            <tr>
+                <th>Month</th>
+                <th>Year</th>
+                <th>Hours Worked</th>
+                <th>Deductions</th>
+            </tr>
+    
+                <tr>
+                    <td><%= payroll.month %></td>
+                    <td><%= payroll.year %></td>
+                    <td><%= payroll.hours_worked %></td>
+                    <td><%= payroll.deductions %></td>
+                </tr> 
+        </table>
+    </div>
+
+</body>
+</html>
